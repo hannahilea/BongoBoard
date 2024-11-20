@@ -4,7 +4,7 @@ Drums have been used as a [communication tool](https://en.wikipedia.org/wiki/Dru
 
 (Formerly: `BongoType`)
 
-![Logo: drum and laptop on a black background, with a moving circle of emojis, the top half of which are 0 and 1 and the bottom half of which are musical notes.](./assets/logo1.gif)
+![Logo: drum and laptop on a black background, with a moving circle of emojis, the top half of which are 0 and 1 and the bottom half of which are musical notes.](./assets/logo.gif)
 
 BongoBoard is the world's ~~first~~ ~~[second](https://www.reddit.com/r/badUIbattles/comments/gha25t/ascii_input_keyboard_the_binary_bongos/)~~ [umpteenth](https://medium.com/@jam1garner/how-i-turned-my-dk-bongos-into-a-keyboard-897299f71835) bongo-based human computer interface! Much like a stenographer's chorded [stenotype keyboard](https://en.wikipedia.org/wiki/Stenotype) enables realtime transcription, this unchorded [bongo board](https://en.wikipedia.org/wiki/GameCube_accessories#DK_Bongos) facilitates computer input at up to X BPM (bongos per minute)---not to mention its yell modifier! 
 
