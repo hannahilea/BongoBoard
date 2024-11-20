@@ -1,17 +1,18 @@
-Drums have been used as a [communication tool](https://en.wikipedia.org/wiki/Drums_in_communication) (distance/ceremony/etc) for eons. Why not use them to communicate with your own personal technological device?! Introducing...
+Drums have been used as a [communication tool](https://en.wikipedia.org/wiki/Drums_in_communication) (distance/ceremony/etc) for eons. Why not use them to communicate with your own electronic devices?! Introducing...
 
-# Bongotype!
+# BongoBoard!
+
+(Formerly: `BongoType`)
 
 ![Logo: drum and laptop on a black background, with a moving circle of emojis, the top half of which are 0 and 1 and the bottom half of which are musical notes.](./assets/logo1.gif)
 
-Bongotype is the world's ~~first~~ [second](https://www.reddit.com/r/badUIbattles/comments/gha25t/ascii_input_keyboard_the_binary_bongos/) bongo-based human computer interface! Much like a stenographer's chorded [stenotype keyboard](https://en.wikipedia.org/wiki/Stenotype) enables realtime transcription, this unchorded [bongoboard](https://en.wikipedia.org/wiki/GameCube_accessories#DK_Bongos) facilitates computer input at up to X BPM (bongos per minute)---not to mention a yell modifier! 
+BongoBoard is the world's ~~first~~ ~~[second](https://www.reddit.com/r/badUIbattles/comments/gha25t/ascii_input_keyboard_the_binary_bongos/)~~ [umpteenth](https://medium.com/@jam1garner/how-i-turned-my-dk-bongos-into-a-keyboard-897299f71835) bongo-based human computer interface! Much like a stenographer's chorded [stenotype keyboard](https://en.wikipedia.org/wiki/Stenotype) enables realtime transcription, this unchorded [bongo board](https://en.wikipedia.org/wiki/GameCube_accessories#DK_Bongos) facilitates computer input at up to X BPM (bongos per minute)---not to mention its yell modifier! 
 
-Special input modes designed for special use-cases may include:
+Future input modes may include:
 - `morse code` mode: drum your message madly!
 - `binary` mode: drum your bytes madly!
 - `git` mode: you drummed your changes, now drum your commit!
-- `mouse` mode: yell to control the mouse! Change volume to move up/down the screen, and change pitch to move left to right!
-- `movement` mode: while yelling, specific drum patterns correspond to arrow and tab keys!
+- `mouse` mode: drum to control the mouse!
 
 
 ### Dev notes
