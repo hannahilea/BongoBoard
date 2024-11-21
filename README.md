@@ -42,7 +42,7 @@ TODO-schematic
         ```
     The Feather will then be visible in Finder; mine showed up as `FTHR840BOOT`
 
-4. In the terminal, cd onto the Feather and clone this repository onto it. 
+4. In the terminal, cd onto the Feather and clone this repository onto it at the top level.
 
 ### Dev notes
 
