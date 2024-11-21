@@ -42,7 +42,20 @@ TODO-schematic
         ```
     The Feather will then be visible in Finder; mine showed up as `FTHR840BOOT`
 
-4. In the terminal, cd onto the Feather and clone this repository onto it at the top level.
+4. Install CircuitPython on the Feather: [download it here](https://circuitpython.org/board/feather_nrf52840_express/), then copy it onto the Feather (via Finder or terminal). The Feather will then rename itself to CIRCUITPY, as well as adding a few empty directories.
+
+4. Basic setup is done! Now it's time to add *our* code: In the terminal, cd onto the Feather and clone this repository onto it at the top level: 
+    ```
+    cd /Volumes/CIRCUITPY/
+    rm code.py
+    git init
+    git remote add origin https://github.com/hannahilea/BongoBoard.git
+    git fetch
+    git checkout -t origin/main
+    ```
+    Note: we can't *just* do a typical git clone into this directory, because the directory is non-empty.
+
+...
 
 ### Dev notes
 
