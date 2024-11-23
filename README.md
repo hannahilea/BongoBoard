@@ -50,13 +50,13 @@ TODO-schematic
     rm code.py
     git init
     git remote add origin https://github.com/hannahilea/BongoBoard.git
-    git fetch
+    git fetch --depth=1
     git checkout -t origin/main
     ```
     Note: we can't *just* do a typical git clone into this directory, because the directory is non-empty.
 
-...
+...and that's it. If you want to update functionality, and need to add additional CircuitPython libraries, those can be found [here](https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries).
 
-### Dev notes
+## Notes
 
 [Logo](https://editor.p5js.org/hannahilea/sketches/77GaUZb62) created in p5.js; adapted from preexisting [earth/moon/orbit sketch](https://happycoding.io/tutorials/p5js/arrays/earth-moon-emoji-orbit).
