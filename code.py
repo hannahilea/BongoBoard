@@ -2,58 +2,35 @@
 """
 BongoBoard controller that acts as a BLE HID keyboard to peer devices.
 """
-import board
+import board # type: ignore 
+import time
 from digitalio import DigitalInOut, Direction
+from digitalio import Pull
 
-import adafruit_ble
-from adafruit_ble.advertising import Advertisement
-from adafruit_ble.advertising.standard import ProvideServicesAdvertisement
-from adafruit_ble.services.standard.hid import HIDService
-from adafruit_ble.services.standard.device_info import DeviceInfoService
+button_1 = DigitalInOut(board.D10)
+button_1.direction = Direction.INPUT
+button_1.pull = Pull.UP
 
-# Initialize the onboard controls
-onboard_button = DigitalInOut(board.SWITCH)
-onboard_button.direction = Direction.INPUT
+button_2 = DigitalInOut(board.D9)
+button_2.direction = Direction.INPUT
+button_2.pull = Pull.UP
 
-# Set up bluetooth connection
-hid = HIDService()
-device_info = DeviceInfoService(
-    software_revision=adafruit_ble.__version__, manufacturer="Adafruit Industries"
-)
-advertisement = ProvideServicesAdvertisement(hid)
-advertisement.appearance = 961
-scan_response = Advertisement()
-scan_response.complete_name = "BongoBoard"
+button_3 = DigitalInOut(board.D6)
+button_3.direction = Direction.INPUT
+button_3.pull = Pull.UP
 
-ble = adafruit_ble.BLERadio()
-ble.name = "BongoBoard"
-if not ble.connected:
-    print("advertising")
-    ble.start_advertising(advertisement, scan_response)
-else:
-    print("already connected")
-    print(ble.connections)
+button_4 = DigitalInOut(board.D5)
+button_4.direction = Direction.INPUT
+button_4.pull = Pull.UP
+
 
 def main_event_loop():
+    i = 0
     while True:
-        while not ble.connected:
-            pass
-        print("Bluetooth connected!")
-
-        is_onboard_button_pushed = False
-        while ble.connected:
-
-            # Update button state
-            _is_onboard_button_pushed = not onboard_button.value
-            if is_onboard_button_pushed != _is_onboard_button_pushed:
-                is_onboard_button_pushed = _is_onboard_button_pushed
-                if is_onboard_button_pushed:
-                    print("On-board button pressed!")
-                else:
-                    print("On-board button released")
-
-        ble.start_advertising(advertisement)
-
+        print("Buttons pushed (", i, ")? ", not button_1.value, not button_2.value, 
+              not button_3.value, not button_4.value)
+        time.sleep(.2)
+        i += 1
 
 if __name__ == "__main__":
     main_event_loop()
