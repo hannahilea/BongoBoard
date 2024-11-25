@@ -59,4 +59,5 @@ TODO-schematic
 
 ## Notes
 
-[Logo](https://editor.p5js.org/hannahilea/sketches/77GaUZb62) created in p5.js; adapted from preexisting [earth/moon/orbit sketch](https://happycoding.io/tutorials/p5js/arrays/earth-moon-emoji-orbit).
+- [Logo](https://editor.p5js.org/hannahilea/sketches/77GaUZb62) created in p5.js; adapted from preexisting [earth/moon/orbit sketch](https://happycoding.io/tutorials/p5js/arrays/earth-moon-emoji-orbit).
+- Curious about what it looks like inside? Here's a quick teardown someone else made: https://www.youtube.com/watch?v=NJOHrHGcB3g 
