@@ -25,7 +25,7 @@ button_4.direction = Direction.INPUT
 button_4.pull = Pull.UP
 
 mic = AnalogIn(board.A1)
-NUM_SMOOTHED_MIC_INPUTS = 100
+NUM_SMOOTHED_MIC_INPUTS = 1000
 mic_buffer = [0 for _ in range(NUM_SMOOTHED_MIC_INPUTS)]
 
 def main_event_loop():
@@ -34,11 +34,8 @@ def main_event_loop():
         mic_buffer.append(mic.value)
         mic_buffer.pop(0)
 
-        i += 1
-        if i % 1000 == 0:
-            print("Buttons pushed? ", not button_1.value, not button_2.value, 
-                not button_3.value, not button_4.value)
-            print("Mic: ", max(mic_buffer))
+        abs_max = max([abs(i) for i in mic_buffer])
+        print(">mic_abs_max:",abs_max,",neg_abs_max:",-abs_max,",mic_raw:", mic_buffer[NUM_SMOOTHED_MIC_INPUTS - 1],"\r\n")
         
 
 if __name__ == "__main__":
