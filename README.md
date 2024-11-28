@@ -21,19 +21,23 @@ Once you've set up your controller, and connected to it over bluetooth, you can 
 
 TODO - implement!
 
-## Hardware setup
+## Getting started
 
-Starting with a DK Bongo controller (or other set of 6 button inputs + microphone), connect them to an [Adafruit nRF52840 Feather](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather) according to the following schematic: 
+### Hardware
+
+Starting with a DK Bongo controller (or other set of 6 button inputs + microphone), wire its buttons (plus an additional [microphone](https://www.adafruit.com/product/1063)) to an [Adafruit nRF52840 Feather](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather) according to the following schematic: 
 
 TODO-schematic 
 
-## Controller setup
+### Microcontroller (Adafruit Feather)
 
-1. Connect the Feather to your computer via USB cable. (Note: I ran these steps from a Mac running Sonoma 14.6.1; you may need to tweak things slightly for a different OS.)
+Note: I ran these steps from a Mac running Sonoma 14.6.1; you may need to tweak things slightly for a different operating system.
+
+1. Connect the Feather to your computer via USB cable. 
 
 2. Download `feather_nrf52840_express_bootloader-0.8.0_s140_6.1.1.zip` from https://github.com/adafruit/Adafruit_nRF52_Bootloader/releases/tag/0.8.0
 
-3. Update the board's bootloader, so that we'll be able to run CircuitPython on it. Do this by following one of the paths in the [Adafruit instructions](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/update-bootloader); I did this via the [CLI options](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/update-bootloader-use-command-line#download-adafruit-nrfutil-3108972) route, namely, 
+3. **Update the board's bootloader,** so that we'll be able to run CircuitPython on it. Do this by following one of the paths in the [Adafruit instructions](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/update-bootloader); I did this via the [CLI options](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/update-bootloader-use-command-line#download-adafruit-nrfutil-3108972) route, namely, 
     1. Downloaded the `adafruit-nrfutil` executable
     2. In terminal, ran `ls /dev/cu.*` in the terminal to find my Feather's device name (mine was `/dev/cu.usbmodem1101`)
     3. In terminal, ran 
@@ -42,9 +46,9 @@ TODO-schematic
         ```
     The Feather will then be visible in Finder; mine showed up as `FTHR840BOOT`
 
-4. Install CircuitPython on the Feather: [download it here](https://circuitpython.org/board/feather_nrf52840_express/), then copy it onto the Feather (via Finder or terminal). The Feather will then rename itself to CIRCUITPY, as well as adding a few empty directories.
+4. **Install CircuitPython on the Feather.** As of now, the software implementation is built with CircuitPython 8.2.7, which can be downloaded [here (`adafruit-circuitpython-adafruit_feather_rp2040-en_US-8.2.7.uf2`)](https://adafruit-circuit-python.s3.amazonaws.com/index.html?prefix=bin/adafruit_feather_rp2040/en_US/). Copy the downloaded .uf2 file onto the Feather; the Feather will handle the rest of the setup, including renaming itself to CIRCUITPY and adding a few empty directories.
 
-4. Basic setup is done! Now it's time to add *our* code: In the terminal, cd onto the Feather and clone this repository onto it at the top level: 
+4. **Put the BongoBoard code on the Feather.** In the terminal, cd to the Feather and then clone this repository onto it at the top level: 
     ```
     cd /Volumes/CIRCUITPY/
     rm code.py
@@ -55,9 +59,19 @@ TODO-schematic
     ```
     Note: we can't *just* do a typical git clone into this directory, because the directory is non-empty.
 
-...and that's it. If you want to update functionality, and need to add additional CircuitPython libraries, those can be found [here](https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries).
+...and that's it!
+
+### Usage
+
+If you've followed the above setup, when you power the Feather on, it will show up as an available Bluetooth keyboard peripheral, e.g. for your personal computer. Once you've paired with it, it is ready to be used in any of the available modes. See those modes for additional description.
+
+### Additional notes for developers
+
+- Using VSCode? The [Serial Plotter](https://marketplace.visualstudio.com/items?itemName=badlogicgames.serial-plotter.) is useful for e.g. understanding sensor input (in this case, from the mic).
+- If your code needs add additional CircuitPython libraries, those can be found [here](https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries). You'll need to use the bundle that matches the current CircuitPython version for this project, which (as time of writing) is  "Bundle for Version 8.x".
 
 ## Notes
 
 - [Logo](https://editor.p5js.org/hannahilea/sketches/77GaUZb62) created in p5.js; adapted from preexisting [earth/moon/orbit sketch](https://happycoding.io/tutorials/p5js/arrays/earth-moon-emoji-orbit).
-- Curious about what it looks like inside? Here's a quick teardown someone else made: https://www.youtube.com/watch?v=NJOHrHGcB3g 
+- Curious about what the DK Bongos look like inside? Here's a quick teardown someone else made: https://www.youtube.com/watch?v=NJOHrHGcB3g 
+
