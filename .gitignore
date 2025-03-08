@@ -1,3 +1,4 @@
 .*
 !.gitignore
 boot_out.txt
+__pycache__/
